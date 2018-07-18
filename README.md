@@ -1,6 +1,6 @@
 # README or it didn't happen!
 
-Repo ini menyediakan *soure code* untuk seminar yang diadakan pada 24 Juli 2018 yang berjudul **Pengaruh Tingkat Penetrasi Internet terhadap Perekonomian Provinsi di Indonesia tahun 2010 sampai 2015**.
+Repo ini menyediakan *source code* untuk seminar yang diadakan pada 24 Juli 2018 yang berjudul **Pengaruh Tingkat Penetrasi Internet terhadap Perekonomian Provinsi di Indonesia tahun 2010 sampai 2015**.
 
 ## Tentang makalah ini
 
