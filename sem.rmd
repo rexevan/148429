@@ -1,0 +1,354 @@
+---
+output:
+    bookdown::pdf_document2:
+        latex_engine: xelatex
+        template: apx/template.tex
+        toc: no
+        includes:
+            after_body: apx/lampiran.tex
+
+documentclass: article
+papersize: a4
+mainfont: Times New Roman
+fontsize: 11pt
+classoption: oneside
+
+margin-left: 3cm
+margin-right: 3cm
+margin-top: 3cm
+margin-bottom: 3cm
+
+title: Pengaruh Tingkat Penetrasi Internet terhadap Perekonomian Provinsi Indonesia Tahun 2010 - 2015
+
+mahasiswa: Wihelmus Wedo
+tingkat: IVSE1
+nim: 14.8429
+emailmahasiswa: rex.evan96@gmail.com
+
+dosbing: Anugerah Karta Monika, S.Si, ME
+emaildosbing: ak.monika@bps.go.id
+
+abstrak:
+    Internet merupakan medium penyebaran informasi.
+    Sebagai medium penyebaran informasi, internet menyebarkan ilmu pengetahuan, mengurangi biaya dan memfasilitasi agar pekerjaan dapat dipercepat.
+    Dengan bertambahnya pengetahuan, pengurangan biaya, dan pekerjaan yang lebih cepat, produktivitas meningkat sehingga pendapatan ikut meningkat.
+    Makalah ini bertujuan untuk melihat perkembangan tingkat penetrasi internet di Indonesia dan pengaruhnya terhadap pertumbuhan ekonomi.
+    Data dikumpulkan dari Badan Pusat Statistik dalam bentuk panel dengan 33 provinsi selama tahun 2010 sampai 2015.
+    Makalah ini menunjukkan bahwa tingkat penetrasi internet di Indonesia mengalami pertumbuhan.
+    Hasil pemodelan dengan OLS menunjukkan bahwa peningkatan tingkat penetrasi internet sebesar 10 poin persen dapat meningkatan pertumbuhan PDRB ADHK sebesar 1,49 persen.
+katakunci: internet, pertumbuhan ekonomi, regresi panel, indonesia
+
+abstract:
+    Internet is a medium to spread information.
+    As a medium to spread information, internet spread knowledge, reduce cost, and facilitate things to make work faster.
+    With more knowledge, reduced cost, and faster work, productivity will increase and so will profit.
+    This paper investigates the growth of internet penetration rate in Indonesia and its impact to economic growth.
+    Data collected from Indonesia Statistics in panel consist of 33 provinces from 2010 to 2015.
+    This paper shows that internet penetration rate has been raising from 2010 to 2015.
+    Results from OLS shows that 10 percentage points increase in internet penetration raises real GDP by 1.49 percent.
+keywords: internet, economic growth, panel regression, indonesia
+
+haritanggal: Selasa, 24 Juli 2018
+ruang: 253
+sesi: 1
+pukul: 08.00-09.00
+
+bibliography: uni.bib
+urlcolor: blue
+---
+
+# PENDAHULUAN
+
+Masa sekarang merupakan masanya internet.
+Banyak hal dalam keseharian yang dilakukan menggunakan jaringan internet.
+Membaca berita, menonton video, membeli barang, bermain *online game* atau sekadar bercanda gurau dengan kawan yang jauh.
+Dengan hadirnya internet, tercipta dunia maya di mana informasi dapat menyebar dengan cepat dan masif.
+Internet adalah sebuah sistem jaringan komunikasi global yang menghubungkan komputer dan jaringan komputer di seluruh dunia.
+Fasilitas internet menyediakan akses ke sejumlah layanan komunikasi termasuk halaman *world wide web*, *e-mail*, berita, hiburan, dan data.
+Individu yang ingin menggunakan fasilitas internet perlu memiliki alat seperti komputer, *tablet*, dan *smartphone*.
+Kemudian individu tersebut perlu membeli pulsa dan paket data.
+
+Dalam bidang ekonomi, internet memiliki keterkaitan dengan ekonomi digital.
+Ekonomi digital merupakan pengaruh dari transformasi teknologi untuk kepentingan umum dalam sektor Informasi dan Komunikasi.
+Ekonomi digital telah memengaruhi aktivitas sektor ekonomi dan sosial, seperti transportasi, finansial, pabrik, pedagang eceran, pendidikan, dll.
+Salah satu hal yang penting untuk diperhatikan dalam mewujudkan ekonomi digital adalah Internet.
+Internet merupakan tulang punggung dari ekonomi digital.
+Internet mendukung sebagian besar aktivitas sosial, dan menjadi katalis untuk inovasi, perkembangan ekonomi dan kesejahteraan sosial \citep{oecd16}.
+Keterbukaan dari Internet dapat dilihat dari banyaknya pengguna internet.
+Adapun Internet memberdayakan penduduk dalam menemukan dan menyebarkan ide dalam cara yang baru dan berbeda.
+
+Internet membawa perubahan dalam penyebaran informasi di lingkungan masyarakat.
+Internet membuat hidup menjadi lebih mudah dengan mengurangi waktu dan biaya.
+Dalam kaitannya dengan ekonomi, internet memiliki kaitan dengan ekonomi digital.
+Salah satu keterkaitan antara internet dengan ekonomi digital adalah jumlah pengguna dari internet.
+Dengan semakin banyak masyarakat yang paham menggunakan internet, maka ekonomi digital dapat bertumbuh.
+Dengan pertumbuhan ekonomi digital diharapkan perekonomian bangsa akan turut bertumbuh.
+
+Presiden Indonesia, Joko Widodo memiliki visi Indonesia wujudkan ekonomi digital terbesar di ASEAN.
+Oleh karena itu, jumlah pengguna internet menjadi hal yang menarik untuk diteliti sebab memiliki kaitan dengan ekonomi digital.
+Penelitian lainnya yang dilakukan seperti \cite{feng16} menunjukkan bahwa internet memiliki pengaruh positif bagi perekonomian Tiongkok.
+Penelitian yang dilakukan \cite{chu} juga menunjukkan bahwa dalam skala global, tingkat penetrasi internet berpengaruh positif terhadap perekonomian suatu negara.
+Akan tetapi, penelitian mengenai internet di Indonesia masih sedikit dilakukan.
+Penelitian ini ditujukan untuk mengisi kekosongan tersebut, yaitu ingin mengetahui pengaruh tingkat penetrasi internet bagi perekonomian di Indonesia.
+Tujuan penelitian ini adalah sebagai berikut
+
+1. Mengetahui gambaran perkembangan tingkat penetrasi internet di Indonesia, dan
+2. Mengetahui pengaruh tingkat penetrasi internet terhadap perekonomian di Indonesia.
+
+# METODOLOGI
+
+Internet merupakan medium penyebaran informasi.
+Sebagai medium dalam penyebaran informasi, internet memiliki peran penting dalam penyebaran ilmu pengetahuan.
+Dengan ilmu pengetahuan yang semakin berkembang dan menyebar dengan cepat, masyarakat menjadi lebih cerdas sehingga produktivitas meningkat \citep{chu}.
+Internet menciptakan pasar digital di mana batas-batas pasar fisik seperti jarak dan waktu dapat kurangi.
+Sebab semua orang dapat mengakses internet, banyak penjual dan pembeli yang dapat masuk dan keluar dari pasar digital.
+Kondisi ini mendorong pasar yang kompetitif dan inovatif \citep{feng16}.
+
+Internet memiliki pengaruh yang positif bagi kesejahteraan individu \citep{oecd16}.
+Semakin banyak penduduk yang menggunakan internet, pengaruh internet bagi perekonomian wilayah tersebut juga semakin besar.
+Salah satu ukuran yang menyatakan banyaknya pengguna internet adalah tingkat penetrasi internet (\textit{Internet Penetration Rate}).
+Tingkat penetrasi internet menyatakan jumlah penduduk yang menggunakan internet terhadap jumlah penduduk keseluruhan.
+Badan Pusat Statistik dalam publikasi Statistik Telekomunikasi Indonesia juga menghasilkan ukuran yang menyatakan tingkat penetrasi internet.
+
+\begin{equation}
+    {I} = \frac{\text{Jumlah Penduduk 5 Tahun Ke atas yang mengakses Internet}}{\text{Jumlah Penduduk 5 Tahun Ke atas}} \times 100\%
+    \label{eq:tpi}
+\end{equation}
+
+Untuk melihat pengaruh dari tingkat penetrasi internet, digunakan model Cobb-Douglass.
+
+\begin{equation}
+    {Y}_{it} = A \times K^{\beta_1}_{it} \times H^{\beta_2}_{it} \times L^{\beta_3}_{it}
+    \label{eq:cobbdou}
+\end{equation}
+
+Dengan
+$i$ menunjukkan provinsi, dan $t$ menunjukkan tahun,
+$Y$ menunjukkan Produk Domestik Regional Bruto (PDRB) Atas Dasar Harga Konstan (ADHK) 2010,
+$A$ menunjukkan total faktor produktivitas (TFP),
+TFP merupakan faktor-faktor produksi lain selain PMTB, APKSM dan tenaga kerja,
+$K$ menunjukkan Pembentukkan Modal Tetap Bruto atau PMTB dan $\beta_1$ menunjukkan elastisitas output dari PMTB,
+$H$ menunjukkan Angka Parsitipasi Kasar Sekolah Menengah atau APKSM dan $\beta_2$ adalah elastisitas output dari APKSM,
+$L$ menunjukkan Tingkat Kesempatan Kerja atau TKK dan $\beta_3$ menunjukkan elastisitas output dari TKK,
+
+Mengikuti \citet{chu}, faktor dari tingkat penetrasi internet dapat dimasukkan ke dalam model Cobb-Douglas dengan menggunakan TFP.
+TFP merupakan faktor-faktor lain yang turut berperan dalam produksi selain PMTB, APKSM dan TKK.
+Salah satu faktor tersebut adalah adalah tingkat penetrasi internet (TPI).
+TFP dituliskan kembali menjadi $A = A_0 \times I^{\beta_4}$.
+$I$ menyatakan TPI, dan $\beta_4$ menyatakan elastisitas output dari TPI.
+$A_0$ adalah TFP baru yang menunjukkan faktor produksi selain PMTB, APKSM, TKK dan TPI.
+Dengan subsitusi $A = A_0 \times I^{\beta_4}$ dan transformasi logaritma natural,  persamaan (\ref{eq:cobbdou}) dapat ditulis kembali menjadi
+
+\begin{equation}
+    \ln(Y_{it}) = \ln(A_0) + \beta_1 \ln(K_{it}) + \beta_2 \ln(H_{it}) + \beta_3 \ln(L_{it}) + \beta_4 \ln(I_{it})
+    \label{eq:final}
+\end{equation}
+
+dengan $\beta_1$, $\beta_2$, $\beta_3$, $\beta_4$ adalah elastisitas dari masing-masing faktor produksi, dan akan dilakukan estimasi.
+Besarnya pengaruh TPI terhadap perekonomian tercermin pada $\beta_4$.
+
+Metode analisis yang digunakan adalah metode analisis deskriptif dan metode analisis inferensia.
+Pada metode analisis deskriptif digunakan tabel dan grafik, sedangkan pada metode analisis inferensia digunakan model hasil regresi linier.
+Dalam membangun model, terdapat tiga pilihan yaitu model Pooled (POLS), model *fixed effect* (FE), dan model *random effect* (RE).
+Bentuk model POLS, FE, dan RE mengikuti \cite{woolridge09}.
+
+Model pertama adalah model POLS.
+Model POLS tidak memperhatikan dimensi provinsi dan waktu.
+Berikut adalah model POLS.
+
+\begin{equation}
+    \acute{Y}_{it} = {\delta} + \beta_1 \acute{K}_{it} + \beta_2 \acute{H}_{it} + \beta_3 \acute{L}_{it} + \beta_4 \acute{I}_{it} + {\upsilon}_{it}
+    \label{eq:pols}
+\end{equation}
+
+Dengan $\acute{Y}_{it} = \ln(Y_{it}), \acute{K}_{it} = \ln(K_{it})$, begitu pula dengan $\acute{H}_{it}, \acute{L}_{it}, \acute{I}_{it}$, dst.
+${\delta}$ adalah intersep, dan ${\upsilon}_{it}$ adalah galat.
+Model POLS diestimasi dengan *Ordinary Least Square* atau OLS.
+
+Model kedua adalah model FE.
+Model FE sering juga disebut sebagai model *within*.
+Dalam model FE, setiap variabel dilakukan transformasi *within*, yaitu mengurangi data asal $\acute{Y}_{it}$, $\acute{K}_{it}$, dst\. dengan rata-rata waktu tiap provinsi.
+Data yang digunakan dalam estimasi model FE adalah *time-demeaned data*.
+Berikut adalah model FE.
+
+\begin{equation}
+    \ddot{Y}_{it} = \beta_1 \ddot{K}_{it} + \beta_2 \ddot{H}_{it} + \beta_3 \ddot{L}_{it} + \beta_4 \ddot{I}_{it} + \ddot{\epsilon}_{it} \\
+    \label{eq:fe}
+\end{equation}
+
+Dengan
+$\ddot{Y}_{it} = (\acute{Y}_{it} - \bar{\acute{Y}}_{i.})$,
+$\ddot{K}_{it} = (\acute{K}_{it} - \bar{\acute{K}}_{i.})$, begitu pula dengan
+${H}_{it}$, $\ddot{L}_{it}$ dan $\ddot{I}_{it}$
+$\ddot{\epsilon}_{it} = ({\epsilon}_{it} - \bar{\epsilon}_{i.})$ adalah galat.
+Tanda *overbar* menunjukkan rata-rata waktu di dalam (*within*) provinsi tersebut.
+Seperti model POLS, model FE juga diestimasi dengan OLS.
+
+Model ketiga adalah model RE.
+Data yang digunakan dalam estimasi model RE adalah *quasi-demeaned data*.
+Transformasi untuk model RE sama dengan model FE, yaitu transformasi *within*.
+Namun hanya sebagian dari data asal yang dikurangi dengan rata-rata waktu tiap provinsi.
+Berikut adalah model RE.
+
+\begin{equation}
+    \tilde{Y}_{it} = (1 - \theta) {\delta} + \beta_1 \tilde{K}_{it} + \beta_2 \tilde{H}_{it} + \beta_3 \tilde{L}_{it} + \beta_4 \tilde{I}_{it} + \tilde{\upsilon}_{it}
+    \label{eq:re}
+\end{equation}
+
+Dengan
+$\tilde{Y}_{it} = (\acute{Y}_{it} - \theta \bar{\acute{Y}}_{i.})$,
+$\tilde{K}_{it} = (\acute{K}_{it} - \theta \bar{\acute{K}}_{i.})$, begitu pula dengan
+$\tilde{H}_{it}$, $\tilde{L}_{it}$, dan $\tilde{I}_{it}$.
+$\tilde{\upsilon}_{it} = ({\upsilon}_{it} - \theta \bar{\upsilon}_{i.})$ adalah galat.
+${\delta}$ adalah intersep.
+Tanda *overbar* menunjukkan rata-rata waktu.
+$\theta$ menunjukkan bagian dari rata-rata waktu tiap individu yang akan dikurangi.
+$0 < \theta < 1$.
+Model RE diestimasi dengan menggunakan *Feasbile Generalized Least Square* atau FGLS.
+
+Penelitian ini menggunakan data sekunder.
+Data dikumpulkan dari Situs Badan Pusat Statistik dan publikasi Statistik Telekomunikasi Indonesia.
+Tabel \@ref(sumber-data) mencantumkan satuan dan sumber data dari masing-masing variabel yang digunakan dalam penelitian.
+Ringkasan statistik untuk masing-masing variabel telah ditabulasi ke dalam Tabel \@ref(ringkasan-statistik).
+Ruang lingkup penelitian adalah 33 provinsi di Indonesia yang dikumpulkan dari tahun 2010 sampai tahun 2015.
+Semua provinsi ($i$) di Indonesia kecuali Provinsi Kalimantan Utara digunakan, dan 2010 - 2015 adalah dimensi waktu ($t$).
+Provinsi Kalimantan Utara tidak dimasukkan ke dalam analisis disebabkan oleh beberapa nilai yang tidak ada (*missing value*).
+Dengan demikian, data panel yang digunakan dalam penelitian ini adalah data panel yang seimbang dengan jumlah amatan sebanyak 198.
+
+\begin{table}[h]
+\caption{\label{sumber-data}Sumber Data}
+\centering
+    \begin{tabular}[t]{p{6cm}cp{5cm}}
+        \toprule
+        Nama Variabel                                       & Satuan          & Sumber Data          \\
+        \midrule
+        Produk Domestik Regional Bruto (PDRB)              & Triliun Rupiah  & \cite{tabdimpdrb}    \\
+        Pembentukkan Modal Tetap Bruto  (PMTB)              & Triliun Rupiah  & \cite{tabdimpdrb}    \\
+        Angka Partisipasi Kasar Sekolah Menengah (APKSM)    & \%              & \cite{tabdimapk}    \\
+        Tingkat Kesempatan Kerja (TKK)                      & \%              & \cite{tabtkk}      \\
+        Tingkat Penetrasi Internet (TPI)                    & \%              & \cite{stattele11} dan \cite{stattele15} \\
+        \midrule
+        \multicolumn{3}{l}{$n = 33, t = 6, N = 198$} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+# HASIL DAN PEMBAHASAN
+
+\begin{table}[h]
+\caption{\label{ringkasan-statistik}Ringkasan Statistik}
+    \centering
+    \begin{tabular}[t]{ccrrrrr}
+        \toprule
+        Var.      & Penjelasan  & MIN   & MAX      & MEAN   & SD       & CV\\
+        \midrule
+        $Y_{it}$  & PDRB        & 14.98 & 1454.56  & 239.63 & 330.93 & 1.38\\
+        $K_{it}$  & PMTB        & 3.43  & 654.61   & 76.50  & 117.31 & 1.53\\
+        $H_{it}$  & APKSM       & 44.23 & 95.13    & 72.10  & 10.01  & 0.14\\
+        $L_{it}$  & TKK         & 85.87 & 98.63    & 94.49  & 2.51   & 0.03\\
+        $I_{it}$  & TPI         & 3.78  & 46.63    & 14.42  & 7.22   & 0.50\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Ringkasan statistik yang digunakan adalah MIN, MAX, MEAN, SD, CV.
+MIN menunjukkan nilai terkecil dari suatu variabel.
+Sebaliknya, MAX menunjukkan terbesar atau tertinggi dari suatu variabel.
+MEAN memberikan nilai rata-rata, dan SD menunjukkan standar deviasi.
+Standar Deviasi memberikan arti deviasi atau simpangan terhadap nilai rata-rata variabel tersebut.
+Semakin tinggi nilai standar deviasi maka makin besar persebaran nilai amatan.
+CV adalah koefisien variasi (\textit{coefficient of Variance}).
+Koefisien variasi merupakan rasio antara SD dengan MEAN.
+CV menunjukkan tingkat penyebaran suatu variabel relatif terhadap rata-rata variabel tersebut.
+CV digunakan untuk membandingkan tingkat penyebaran pada variabel yang tidak memiliki satuan yang sama.
+Semakin tinggi nilai CV, maka tingkat penyebaran data juga semakin tinggi.
+
+Jika menggunakan nilai standar deviasi, PDRB lebih bervariasi daripada PMTB.
+Kedua variabel sama-sama menggunakan satuan triliun rupiah, sehingga perbandingan dapat dilakukan dengan melihat nilai SD.
+Hal yang sama dapat dikatakan untuk variabel APKSM, TKK dan TPI yang sama-sama memiliki satuan persen.
+Namun jika dilihat nilai koefisien variasi, PMTB justru lebih bervariasi daripada PDRB.
+Hal tersebut disebabkan oleh nilai rata-rata PDRB yang lebih besar daripada PMTB.
+Dengan nilai koefisien variasi, nilai satuan 4 variabel di atas (PDRB, PMTB, APKSM, TKK, dan TPI) dapat dibandingkan satu sama lain.
+Sesuai urutan, variabel dengan penyebaran yang paling kecil adalah TKK, APKSM, TPI, PDRB, dan terakhir adalah PMTB.
+
+Nilai terkecil untuk PDRB adalah 14,98 triliun rupiah.
+Nilai tersebut dimiliki oleh Provinsi Maluku Utara pada tahun 2010.
+Sementara nilai tertinggi sebesar 1454,56 triliun rupiah dimiliki oleh Provinsi DKI Jakarta pada tahun 2015.
+Untuk variabel PMTB, nilai terkecil adalah 3,43 triliun rupiah dimiliki oleh Provinsi Maluku Utara pada tahun 2010.
+Sedangkan nilai tertinggi dimiliki oleh Provinsi DKI Jakarta pada tahun 2015 sebesar 654,61 triliun rupiah.
+
+Provinsi dengan angka partisipasi kasar sekolah menengah (APKSM) terkecil adalah Provinsi Papua pada tahun 2012 dengan nilai sebesar 44,2 persen.
+Hampir setengah penduduk usia 16 - 18 tahun adalah murid SM/Sederajat.
+Nilai tertinggi APKSM juga tidak melewati 100 persen.
+Hal tersebut menunjukkan bahwa ada penduduk usia 16 - 18 tahun yang bukan murid sekolah menengah/sederajat.
+Nilai APKSM terbesar diraih oleh provinsi Maluku pada tahun 2015 dengan 95,1 persen.
+Sekitar 4,9 persen penduduk usia 16 sampai 18 tahun yang bukan murid sekolah menengah/sederajat.
+Sementara itu, Rata-rata APKSM adalah 72,10 persen dengan standar deviasi sebesar 2,36 persen.
+
+Nilai terbesar untuk tingkat kesempatan kerja adalah 98,6 persen dari Provinsi Bali pada tahun 2015, sedangkan nilai terendah adalah 85,86 persen dari Provinsi Banten.
+Selama tahun 2010 - 2015, paling sedikit sekitar 85 persen penduduk usia kerja memiliki pekerjaan dan paling banyak sekitar 98 persen.
+Nilai rata-rata tingkat kesempatan kerja adalah 94,49 persen, sedangkan standar deviasi sebesar 2,51 persen.
+Ini menunjukkan tingkat kesempatan kerja yang tidak jauh berbeda.
+
+Gambar \@ref(fig:akses-1) menunjukkan penyebaran pengguna internet pada tahun 2010 dan 2015.
+Sumbu datar adalah bin untuk persentase pengguna internet, sedangkan sumbu tegak menyatakan jumlah provinsi yang berada dalam bin tersebut.
+Setiap bin memiliki lebar sebesar 5 persen.
+
+\begin{figure}
+\centering
+\includegraphics[width = 0.8\textwidth]{img/akses-1}
+\caption{Sebaran Tingkat Penetrasi Internet tahun 2010 - 2015}
+\label{fig:akses-1}
+\end{figure}
+
+Pada tahun 2010 kebanyakan provinsi memiliki persentase pengguna internet berada di kisaran antara 5 sampai 10 persen.
+3 Provinsi memiliki persentase terendah diantaranya Provinsi Papua (4,8 persen), Provinsi Sulawesi Barat (4,5 persen) dan Provinsi Nusa Tenggara Timur (3,78 persen).
+Sementara itu, provinsi dengan persentase tertinggi adalah Provinsi DKI Jakarta (26,7 persen) dan Provinsi DI Yogyakarta (21,1 persen).
+Terjadi peningkatan pengguna internet di Indonesia pada tahun 2015.
+Kebanyakan provinsi di Indonesia memiliki pengguna internet antara 15 - 20 persen dari total penduduknya.
+Provinsi dengan persentase pengguna internet terendah adalah provinsi Papua (8,98 persen).
+Selain itu, provinsi dengan persentase pengguna tertinggi adalah Provinsi DKI Jakarta (46,6 persen) diikuti oleh Provinsi Kepulauan Riau (37,0 persen), DI Yogyakarta (35,0 persen), Provinsi Kalimantan Timur (31,6 persen), dan Provinsi Bali (28,8 persen).
+Dapat dikatakan bahwa dalam periode 2010 - 2015, semakin banyak masyarakat indonesia yang menggunakan internet.
+
+Untuk mengetahui pengaruh TPI terhadap pertumbuhan ekonomi, digunakan regresi linier data panel.
+Berbagai pengujian hipotesis dilakukan untuk memilih model linier yang terbaik antara model POLS, FE, dan RE.
+Hasil dari pengujian hipotesis serta beberapa *plot* dapat dilihat pada Lampiran 2 sampai Lampiran 5.
+Setelah dilakukan berbagai pengujian hipoetsis, diputuskan model linier terbaik yaitu model FE.
+Persamaan \ref{eq:inferensia} adalah estimasi model FE pada Persamaan \ref{eq:fe}.
+Bentuk yang lebih lengkap dapat dilihat pada Lampiran 1.
+
+\begin{equation}
+        \ddot{Y}_{it} =
+          \underset{(0.077)}{0.384} \ddot{K}^{\star\star\star}_{it}
+        + \underset{(0.043)}{0.103} \ddot{H}^{\star}_{it} \\
+        + \underset{(0.468)}{1.254} \ddot{L}^{\star\star}_{it} \\
+        + \underset{(0.023)}{0.149} \ddot{I}^{\star\star\star}_{it} \\
+    \label{eq:inferensia}
+\end{equation}
+
+Tanda $\star$, $\star\star$, $\star\star\star$ masing-masing menunjukkan bahwa koefisien signifikan pada tingkat signifikansi 5 persen, 1 persen, dan 0.1 persen.
+Pada tingkat signifikansi sebesar 5 persen, tingkat penetrasi internet memberikan pengaruh positif kepada pertumbuhan ekonomi.
+Persamaan \ref{eq:inferensia} menunjukkan bahwa hubungan positif antara internet dan pertumbuhan ekonomi juga terjadi di Indonesia.
+Peningkatan tingkat penetrasi internet sebesar 10pp (poin persen atau *percentage points*) akan meningkatkan pertumbuhan ekonomi provinsi sebesar 1,49 persen.
+
+Selain estimasi titik, terdapat juga estimasi selang.
+Batas bawah dan batas atas selang kepercayaan menguatkan temuan bahwa tingkat pengguna internet berpengaruh positif terhadap pertumbuhan ekonomi.
+Peningkatan tingkat penetrasi internet sebesar 10 persen akan meningkatkan pertumbuhan ekonomi provinsi sebesar antara 1,04 persen sampai 1,94 persen.
+
+Variabel lain yang ikut disertakan dalam model memiliki pengaruh yang positif bagi pertumbuhan ekonomi, menurut estimasi titik dan estimasi selang.
+Penambahan 10 persen pembentukan modal tetap bruto akan meningkatkan pertumbuhan ekonomi provinsi sebesar 3,84 persen.
+Peningkatan 10pp angka partisipasi kasar sekolah menengah akan meningkatkan pertumbuhan ekonomi provinsi sebesar 1,03 persen.
+Peningkatan 10pp tingkat kesempatan kerja akan meningkatkan pertumbuhan ekonomi sebesar 12,54 persen.
+Nilai R-Square sebesar 0,9210 menunjukkan bahwa model yang dibentuk mampu menjelaskan 92,10 persen keragaman pada variabel terikat.
+
+# KESIMPULAN
+
+Berdasarkan hasil analisis deskriptif dan inferensia, terdapat dua kesimpulan yang dapat diambil.
+Pertama adalah tingkat penetrasi internet per provinsi di Indonesia mengalami peningkatan pada tahun 2010 sampai 2015.
+Hal in menunjukkan bahwa permintaan akan internet per provinsi di Indonesia semakin lama semakin meningkat.
+Perkembangan informasi dan
+Kedua adalah Pertumbuhan tingkat penetrasi internet berpengaruh positif bagi pertumbuhan PDRB provinsi di Indonesia.
+Dengan penelitian ini, dibukttikan bahwa faktor internet seperti TPI memiliki pegaruh positif terhadap pertumbuhan ekonomi seperti yang telah dilakukan \cite{feng16} dan \cite{chu}.
+Oleh karena itu, peneliti memberikan saran kepada pemerintah agar menambah jangkauan internet seperti menambah *Base Transceiver Station* dan meningkatkan kualitas dari akses internet seperti kecepatan internet dan konten yang ditampilkan di internet.
+Peneliti juga memberi saran kepada masyarakat agar menggunakan layanan internet dengan bijaksana dan bertanggung jawab.

@@ -1,0 +1,204 @@
+---
+author: Wihelmus Wedo
+title: Pengaruh Tingkat Penetrasi Internet bagi Perekonomian Provinsi Indonesia Tahun 2010 - 2015
+date:
+    - Selasa, 24 Juli 2018 \\ Sesi 1 (08.00 - 09.00 WIB)
+output:
+    beamer_presentation:
+        theme: metropolis
+        slide_level: 2
+mainfont: Computer Modern Roman
+fontsize: 10pt
+---
+
+## Overview
+
+1. Motivasi
+
+2. Metodologi
+
+3. Hasil
+
+4. Kesimpulan & Saran
+
+5. Promosi
+
+## Motivasi
+
+### Why Internet?
+
++ Internet is usefull for individuals.
+    - reduce cost $\rightarrow$ moar profit
+    - work faster $\rightarrow$ moar productivity.
++ More people should adapt to or utilize the internet.
++ More people utilizing internet $\rightarrow$ increase economic growth.
+
+### Why Provincial Data?
++ Jumlah amatan yang lebih banyak jika menggunakan data panel.
+
+### Why 2010 - 2015?
++ All the data I can get.
+
+# Metodologi
+
+
+## Cobb-Douglass
+
+Persamaan awal:
+$${Y}_{it} = A \times K^{\beta_1}_{it} \times H^{\beta_2}_{it} \times L^{\beta_3}_{it}$$
+
+Faktor pengguna internet dimasukkan dengan menggunakan TFP $$A = A_0 \times I^{\beta_4}_{it}$$
+
+Sehingga persamaan awal menjadi
+$${Y}_{it} = A_0 \times K^{\beta_1}_{it} \times H^{\beta_2}_{it} \times L^{\beta_3}_{it} \times I^{\beta_4}$$
+
+Dilakukan transformasi logaritma natural.
+$$\ln(Y_{it}) = \ln(A_0) + \beta_1 \ln(K_{it}) + \beta_2 \ln(H_{it}) + \beta_3 \ln(L_{it}) + \beta_4 \ln(I_{it})$$
+
+## Cobb-Douglass
+
+$$\ln(Y_{it}) = \ln(A_0) + \beta_1 \ln(K_{it}) + \beta_2 \ln(H_{it}) + \beta_3 \ln(L_{it}) + \beta_4 \ln(I_{it})$$
+
++ $i$ adalah Provinsi, $t$ adalah Tahun,
++ $Y$ adalah Output,
++ $A_0$ adalah TFP,
++ $K$ adalah investasi,
++ $H$ adalah faktor *human capital* atau SDM.
++ $L$ adalah faktor tenaga kerja, dan
++ $I$ adalah faktor penetrasi internet.
+
+$\beta_1$, $\beta_2$, $\beta_3$, dan $\beta_4$ adalah elastisitas dari masing-masing faktor produksi.
+
+Hipotesis penelitian: tingkat penetrasi internet berpengaruh positif bagi pertumbuhan ekonomi.
+$${\beta_4} > 0$$
+
+## Data
+
+- *Balanced Panel* : 33 provinsi selama 2010 sampai 2015.
+- Sumber : Situs BPS dan Statistik Telekomunikasi Indonesia 2011 dan 2015.
+- Variabel
+    + Produk Domestik Regional Bruto Atas Dasar Harga Konstan 2010 (PDRB) $\rightarrow$ $Y$
+    + Pembentukkan Modal Tetap Bruto (PMTB) $\rightarrow$ $K$
+    + Angka Partisipasi Kasar Sekolah Menengah (APKSM) $\rightarrow$ $H$
+    + Tingkat Kesempatan Kerja (TKK) $\rightarrow$ $L$
+    + Tingkat Penetrasi Internet (TPI) $\rightarrow$ $I$
+
+## Data
+
+```{r input-data, include = F}
+library(tidyverse)
+net <- read_csv("data/net_clean.csv")
+```
+
+```{r print-data, echo=F}
+print(net)
+```
+
+## Model Panel
+
+1. Model *Pooled OLS* (POLS)
+2. Model *fixed effect* (FE)
+3. Model *random effect* (RE)
+
+## Model POLS
+$$\acute{Y}_{it} = {\delta} + \beta_1 \acute{K}_{it} + \beta_2 \acute{H}_{it} + \beta_3 \acute{L}_{it} + \beta_4 \acute{I}_{it} + {\upsilon}_{it}$$
+
++ $\acute{Y}_{it} =  ln(Y_{it})$
++ $\acute{K}_{it} =  ln(K_{it})$
++ dst...
+
+${\delta}$ adalah intersep.
+${\upsilon}_{it}$ adalah galat atau *error*.
+Model POLS diestimasi dengan *Ordinary Least Square* atau OLS.
+
+## Model FE
+
+$$\ddot{Y}_{it} = \beta_1 \ddot{K}_{it} + \beta_2 \ddot{H}_{it} + \beta_3 \ddot{L}_{it} + \beta_4 \ddot{I}_{it} + \ddot{\epsilon}_{it}$$
+
++ $\ddot{Y}_{it} = (\acute{Y}_{it} - \bar{\acute{Y}}_{i.})$
++ $\ddot{K}_{it} = (\acute{K}_{it} - \bar{\acute{K}}_{i.})$
++ dst...
+
+$\ddot{\epsilon}_{it} = ({\epsilon}_{it} - \bar{\epsilon}_{i.})$ adalah galat.
+Tanda *overbar* menunjukkan rata-rata waktu di dalam (*within*) provinsi tersebut.
+$$\bar{\acute{Y}}_{i.} = \sum_{t=1}^{T}{\acute{Y}_{it}}/T$$
+Model FE diestimasi dengan OLS.
+
+## Model RE
+
+$$\tilde{Y}_{it} = (1 - \theta) {\delta} + \beta_1 \tilde{K}_{it} + \beta_2 \tilde{H}_{it}
++ \beta_3 \tilde{L}_{it} + \beta_4 \tilde{I}_{it} + \tilde{\upsilon}_{it}$$
+
++ $\tilde{Y}_{it} = (\acute{Y}_{it} - \theta \times \bar{\acute{Y}}_{i.})$
++ $\tilde{K}_{it} = (\acute{K}_{it} - \theta \times \bar{\acute{K}}_{i.})$
++ dst...
+
+$\theta$ menunjukkan bagian dari rata-rata waktu tiap individu yang akan dikurangi.
+$0 < \theta < 1$.
+$\tilde{\upsilon}_{it} = ({\upsilon}_{it} - \theta \bar{{\upsilon}}_{i.})$ adalah galat.
+Tanda *overbar* menunjukkan rata-rata waktu di dalam (*within*) provinsi tersebut.
+Model RE diestimasi dengan menggunakan *Feasbile Generalized Least Square* atau FGLS.
+
+# Hasil
+
+## Ringkasan Statistik
+
+```{r sum-stat, echo = F}
+tbl_sum_stat <- net %>%
+  select(-i,-t) %>%
+  gather(Vars, Data) %>%
+  group_by(Vars) %>%
+  summarise(MIN = min(Data)   %>% round(2),
+            MAX = max(Data)   %>% round(2),
+            MEAN = mean(Data) %>% round(2),
+            SD = sd(Data)     %>% round(2),
+            CV = SD/MEAN      %>% round(2))
+
+print(tbl_sum_stat)
+```
+
+## Pertumbuhan TPI
+
+![](img/akses-1.png)
+
+## Model linier
+
+$$\ddot{Y}_{it} = \underset{(0.07)}{0.384} \ddot{K}^{\star\star\star}_{it} + \underset{(0.04)}{0.103}  \ddot{H}^{\star}_{it} +  \underset{(0.468)}{1.254} \ddot{L}^{\star\star}_{it} + \underset{(0.023)}{0.149} \ddot{I}^{\star\star\star}_{it}$$
+
+$R^{2} = 0.9210$
+
++ Model terbaik adalah model FE.
+
++ Peningkatan tingkat penetrasi internet sebesar 10pp (poin persen) akan meningkatkan pertumbuhan ekonomi provinsi sebesar 1,49%.
+
++ Nilai R-Square sebesar 0,9210 menunjukkan bahwa model yang dibentuk mampu menjelaskan 92,10% keragaman pada variabel terikat.
+
+# Kesimpulan & Saran
+
+## Kesimpulan & Saran
+
+### Kesimpulan
+
+1. TPI di indonesia selama tahun 2010 sampai 2015 mengalami peningkatan.
+
+2. TPI berpengaruh postif terhadap pertumbuhan ekonomi provinsi.
+   Peningkatan TPI sebesar 10pp akan meningkatkan pertumbuhan ekonomi sebesar 1,49%.
+
+### Saran
+
+1. Bagi pemerintah untuk meningkatkan TPI dengan menambah *Base transceiver Station* (BTS).
+2. Bagi pengguna internet untuk menggunakan internet dengan bijak.
+
+# Promosi
+
+##
+
+![](img/Promotion.png)
+
+## GitHub
+
+Unduh di sini!
+
+*Slides* : [](<++>)<++>
+
+*Source Code* : [https://github.com/rexevan/148429](https://github.com/rexevan/148429)
