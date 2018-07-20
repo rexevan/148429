@@ -173,9 +173,9 @@ $R^{2} = 0.9210$
 
 + Model terbaik adalah model FE.
 
-+ Peningkatan tingkat penetrasi internet sebesar 10pp (poin persen) akan meningkatkan pertumbuhan ekonomi provinsi sebesar 1,49%.
++ Peningkatan 10pp (poin persen) variasi TPI antarwaktu akan meningkatkan variasi PDRB antarwaktu sebesar 1,49%.
 
-+ Nilai R-Square sebesar 0,9210 menunjukkan bahwa model yang dibentuk mampu menjelaskan 92,10% keragaman pada variabel terikat.
++ Nilai R-Square sebesar 0,9210 menunjukkan bahwa model yang dibentuk mampu menjelaskan 92,10% variasi PDRB antarwaktu.
 
 # Kesimpulan & Saran
 

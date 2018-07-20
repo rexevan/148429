@@ -35,7 +35,7 @@ abstrak:
     Makalah ini bertujuan untuk melihat perkembangan tingkat penetrasi internet di Indonesia dan pengaruhnya terhadap pertumbuhan ekonomi.
     Data dikumpulkan dari Badan Pusat Statistik dalam bentuk panel dengan 33 provinsi selama tahun 2010 sampai 2015.
     Makalah ini menunjukkan bahwa tingkat penetrasi internet di Indonesia mengalami pertumbuhan.
-    Hasil pemodelan dengan OLS menunjukkan bahwa peningkatan tingkat penetrasi internet sebesar 10 poin persen dapat meningkatan pertumbuhan PDRB ADHK sebesar 1,49 persen.
+    Hasil pemodelan dengan OLS menunjukkan bahwa peningkatan variasi tingkat penetrasi internet antarwaktu sebesar 10 poin persen dapat meningkatan variasi PDRB ADHK antarwaktu sebesar 1,49 persen.
 katakunci: internet, pertumbuhan ekonomi, regresi panel, indonesia
 
 abstract:
@@ -45,7 +45,7 @@ abstract:
     This paper investigates the growth of internet penetration rate in Indonesia and its impact to economic growth.
     Data collected from Indonesia Statistics in panel consist of 33 provinces from 2010 to 2015.
     This paper shows that internet penetration rate has been raising from 2010 to 2015.
-    Results from OLS shows that 10 percentage points increase in internet penetration raises real GDP by 1.49 percent.
+    Results from OLS shows that 10 percentage points increase in variation of internet penetration rate across time raises the variation of real GDP across time by 1.49 percent.
 keywords: internet, economic growth, panel regression, indonesia
 
 haritanggal: Selasa, 24 Juli 2018
@@ -55,44 +55,38 @@ pukul: 08.00-09.00
 
 bibliography: uni.bib
 urlcolor: blue
+linkcolor: black
 ---
 
 # PENDAHULUAN
 
 Masa sekarang merupakan masanya internet.
 Banyak hal dalam keseharian yang dilakukan menggunakan jaringan internet.
-Membaca berita, menonton video, membeli barang, bermain *online game* atau sekadar bercanda gurau dengan kawan yang jauh.
-Dengan hadirnya internet, tercipta dunia maya di mana informasi dapat menyebar dengan cepat dan masif.
+Aktivitas seperti membaca berita, menonton video, membeli barang, bermain *online game* atau sekadar bercanda gurau dengan kawan yang jauh dilakukan dengan *online*.
+Dengan hadirnya internet, tercipta dunia di mana informasi dapat menyebar dengan cepat dan masif.
 Internet adalah sebuah sistem jaringan komunikasi global yang menghubungkan komputer dan jaringan komputer di seluruh dunia.
-Fasilitas internet menyediakan akses ke sejumlah layanan komunikasi termasuk halaman *world wide web*, *e-mail*, berita, hiburan, dan data.
-Individu yang ingin menggunakan fasilitas internet perlu memiliki alat seperti komputer, *tablet*, dan *smartphone*.
-Kemudian individu tersebut perlu membeli pulsa dan paket data.
+Fasilitas internet menyediakan akses kepada layanan komunikasi seperti halaman *world wide web*, *e-mail*, berita, hiburan, dan data.
+Untuk mendapatkan akses internet, seseorang perlu memiliki alat seperti komputer dilengkapi dengan *modem*, laptop, *tablet*, dan *smartphone* dan juga memiliki pulsa atau paket data.
 
-Dalam bidang ekonomi, internet memiliki keterkaitan dengan ekonomi digital.
+Dalam bidang ekonomi, internet memiliki kaitan dengan ekonomi digital.
 Ekonomi digital merupakan pengaruh dari transformasi teknologi untuk kepentingan umum dalam sektor Informasi dan Komunikasi.
 Ekonomi digital telah memengaruhi aktivitas sektor ekonomi dan sosial, seperti transportasi, finansial, pabrik, pedagang eceran, pendidikan, dll.
 Salah satu hal yang penting untuk diperhatikan dalam mewujudkan ekonomi digital adalah Internet.
 Internet merupakan tulang punggung dari ekonomi digital.
-Internet mendukung sebagian besar aktivitas sosial, dan menjadi katalis untuk inovasi, perkembangan ekonomi dan kesejahteraan sosial \citep{oecd16}.
+Internet mendukung sebagian besar aktivitas sosial, dan sebagai katalis untuk proses terbentuknya inovasi, perkembangan ekonomi dan kesejahteraan sosial \citep{oecd16}.
+
 Keterbukaan dari Internet dapat dilihat dari banyaknya pengguna internet.
-Adapun Internet memberdayakan penduduk dalam menemukan dan menyebarkan ide dalam cara yang baru dan berbeda.
-
-Internet membawa perubahan dalam penyebaran informasi di lingkungan masyarakat.
-Internet membuat hidup menjadi lebih mudah dengan mengurangi waktu dan biaya.
-Dalam kaitannya dengan ekonomi, internet memiliki kaitan dengan ekonomi digital.
-Salah satu keterkaitan antara internet dengan ekonomi digital adalah jumlah pengguna dari internet.
-Dengan semakin banyak masyarakat yang paham menggunakan internet, maka ekonomi digital dapat bertumbuh.
-Dengan pertumbuhan ekonomi digital diharapkan perekonomian bangsa akan turut bertumbuh.
-
-Presiden Indonesia, Joko Widodo memiliki visi Indonesia wujudkan ekonomi digital terbesar di ASEAN.
+Semakin banyak masyarakat yang paham menggunakan internet, maka ekonomi digital dapat bertumbuh.
+Dengan pertumbuhan ekonomi digital diharapkan perekonomian negara turut bertumbuh.
+Presiden Indonesia, Joko Widodo memiliki visi Indonesia wujudkan ekonomi digital terbesar di ASEAN \citep{setkab1}.
 Oleh karena itu, jumlah pengguna internet menjadi hal yang menarik untuk diteliti sebab memiliki kaitan dengan ekonomi digital.
-Penelitian lainnya yang dilakukan seperti \cite{feng16} menunjukkan bahwa internet memiliki pengaruh positif bagi perekonomian Tiongkok.
+Dalam penelitian, jumlah pengguna internet diwakili oleh tingkat penetrasi internet (TPI).
+TPI menyatakan proporsi masyarakat yang menggunakan internet.
 Penelitian yang dilakukan \cite{chu} juga menunjukkan bahwa dalam skala global, tingkat penetrasi internet berpengaruh positif terhadap perekonomian suatu negara.
-Akan tetapi, penelitian mengenai internet di Indonesia masih sedikit dilakukan.
-Penelitian ini ditujukan untuk mengisi kekosongan tersebut, yaitu ingin mengetahui pengaruh tingkat penetrasi internet bagi perekonomian di Indonesia.
-Tujuan penelitian ini adalah sebagai berikut
+Penelitian lainnya yang dilakukan seperti \cite{feng16} menunjukkan bahwa faktor internet memiliki pengaruh positif bagi perekonomian Tiongkok.
+Seperti yang dilakukan oleh \cite{chu} dan \cite{feng16}, penelitian ini memiliki tujuan sebagai berikut.
 
-1. Mengetahui gambaran perkembangan tingkat penetrasi internet di Indonesia, dan
+1. Melihat perkembangan tingkat penetrasi internet di Indonesia.
 2. Mengetahui pengaruh tingkat penetrasi internet terhadap perekonomian di Indonesia.
 
 # METODOLOGI
@@ -106,8 +100,8 @@ Kondisi ini mendorong pasar yang kompetitif dan inovatif \citep{feng16}.
 
 Internet memiliki pengaruh yang positif bagi kesejahteraan individu \citep{oecd16}.
 Semakin banyak penduduk yang menggunakan internet, pengaruh internet bagi perekonomian wilayah tersebut juga semakin besar.
-Salah satu ukuran yang menyatakan banyaknya pengguna internet adalah tingkat penetrasi internet (\textit{Internet Penetration Rate}).
-Tingkat penetrasi internet menyatakan jumlah penduduk yang menggunakan internet terhadap jumlah penduduk keseluruhan.
+Ukuran yang menyatakan banyaknya pengguna internet adalah \textit{Internet Penetration Rate} atau tingkat penetrasi internet.
+Tingkat penetrasi internet menyatakan jumlah penduduk yang menggunakan internet terhadap jumlah penduduk keseluruhan disuatu wilayah tertentu pada waktu tertentu.
 Badan Pusat Statistik dalam publikasi Statistik Telekomunikasi Indonesia juga menghasilkan ukuran yang menyatakan tingkat penetrasi internet.
 
 \begin{equation}
@@ -115,7 +109,8 @@ Badan Pusat Statistik dalam publikasi Statistik Telekomunikasi Indonesia juga me
     \label{eq:tpi}
 \end{equation}
 
-Untuk melihat pengaruh dari tingkat penetrasi internet, digunakan model Cobb-Douglass.
+Mengikuti \citet{chu}, faktor dari tingkat penetrasi internet dapat dimasukkan ke dalam model Cobb-Douglas dengan menggunakan TFP.
+Untuk mengetahui pengaruh dari tingkat penetrasi internet, digunakan model Cobb-Douglas.
 
 \begin{equation}
     {Y}_{it} = A \times K^{\beta_1}_{it} \times H^{\beta_2}_{it} \times L^{\beta_3}_{it}
@@ -124,14 +119,13 @@ Untuk melihat pengaruh dari tingkat penetrasi internet, digunakan model Cobb-Dou
 
 Dengan
 $i$ menunjukkan provinsi, dan $t$ menunjukkan tahun,
-$Y$ menunjukkan Produk Domestik Regional Bruto (PDRB) Atas Dasar Harga Konstan (ADHK) 2010,
+$Y$ menunjukkan total produksi yang diwakili oleh Produk Domestik Regional Bruto (PDRB) Atas Dasar Harga Konstan (ADHK) 2010,
 $A$ menunjukkan total faktor produktivitas (TFP),
-TFP merupakan faktor-faktor produksi lain selain PMTB, APKSM dan tenaga kerja,
-$K$ menunjukkan Pembentukkan Modal Tetap Bruto atau PMTB dan $\beta_1$ menunjukkan elastisitas output dari PMTB,
-$H$ menunjukkan Angka Parsitipasi Kasar Sekolah Menengah atau APKSM dan $\beta_2$ adalah elastisitas output dari APKSM,
-$L$ menunjukkan Tingkat Kesempatan Kerja atau TKK dan $\beta_3$ menunjukkan elastisitas output dari TKK,
+TFP merupakan faktor-faktor yang terlibat dalam proses produksi lain selain PMTB, APKSM dan tenaga kerja,
+$K$ menunjukkan faktor investasi yang didekati oleh Pembentukan Modal Tetap Bruto (PMTB) dan $\beta_1$ menunjukkan elastisitas output dari PMTB,
+$H$ menunjukkan faktor *human capital* atau sumber daya manusia yang didekati oleh Angka Partisipasi Kasar Sekolah Menengah (APKSM) dan $\beta_2$ adalah elastisitas output dari APKSM,
+$L$ menunjukkan faktor tenaga kerja yang didekati oleh Tingkat Kesempatan Kerja (TKK) dan $\beta_3$ menunjukkan elastisitas output dari TKK.
 
-Mengikuti \citet{chu}, faktor dari tingkat penetrasi internet dapat dimasukkan ke dalam model Cobb-Douglas dengan menggunakan TFP.
 TFP merupakan faktor-faktor lain yang turut berperan dalam produksi selain PMTB, APKSM dan TKK.
 Salah satu faktor tersebut adalah adalah tingkat penetrasi internet (TPI).
 TFP dituliskan kembali menjadi $A = A_0 \times I^{\beta_4}$.
@@ -140,11 +134,18 @@ $A_0$ adalah TFP baru yang menunjukkan faktor produksi selain PMTB, APKSM, TKK d
 Dengan subsitusi $A = A_0 \times I^{\beta_4}$ dan transformasi logaritma natural,  persamaan (\ref{eq:cobbdou}) dapat ditulis kembali menjadi
 
 \begin{equation}
-    \ln(Y_{it}) = \ln(A_0) + \beta_1 \ln(K_{it}) + \beta_2 \ln(H_{it}) + \beta_3 \ln(L_{it}) + \beta_4 \ln(I_{it})
+    \acute{Y}_{it} = \acute{A_0} + \beta_1 \acute{K}_{it} + \beta_2 \acute{H}_{it} + \beta_3 \acute{L}_{it} + \beta_4 \acute{I}_{it}
     \label{eq:final}
 \end{equation}
 
-dengan $\beta_1$, $\beta_2$, $\beta_3$, $\beta_4$ adalah elastisitas dari masing-masing faktor produksi, dan akan dilakukan estimasi.
+dengan
+$\acute{Y}_{it}   = \ln({Y}_{it})$,
+$\acute{A_0}      = \ln({A_0})$,
+$\acute{K}_{it}   = \ln({K}_{it})$,
+$\acute{H}_{it}   = \ln({H}_{it})$,
+$\acute{L}_{it}   = \ln({L}_{it})$,
+$\acute{I}_{it}   = \ln({I}_{it})$,
+${A_0}$ adalah TFP, $\beta_1$, $\beta_2$, $\beta_3$, dan $\beta_4$ adalah elastisitas dari masing-masing faktor produksi, dan akan dilakukan estimasi.
 Besarnya pengaruh TPI terhadap perekonomian tercermin pada $\beta_4$.
 
 Metode analisis yang digunakan adalah metode analisis deskriptif dan metode analisis inferensia.
@@ -154,7 +155,7 @@ Bentuk model POLS, FE, dan RE mengikuti \cite{woolridge09}.
 
 Model pertama adalah model POLS.
 Model POLS tidak memperhatikan dimensi provinsi dan waktu.
-Berikut adalah model POLS.
+Persamaan \ref{eq:pols} menunjukkan model POLS.
 
 \begin{equation}
     \acute{Y}_{it} = {\delta} + \beta_1 \acute{K}_{it} + \beta_2 \acute{H}_{it} + \beta_3 \acute{L}_{it} + \beta_4 \acute{I}_{it} + {\upsilon}_{it}
@@ -166,10 +167,16 @@ ${\delta}$ adalah intersep, dan ${\upsilon}_{it}$ adalah galat.
 Model POLS diestimasi dengan *Ordinary Least Square* atau OLS.
 
 Model kedua adalah model FE.
-Model FE sering juga disebut sebagai model *within*.
-Dalam model FE, setiap variabel dilakukan transformasi *within*, yaitu mengurangi data asal $\acute{Y}_{it}$, $\acute{K}_{it}$, dst\. dengan rata-rata waktu tiap provinsi.
-Data yang digunakan dalam estimasi model FE adalah *time-demeaned data*.
-Berikut adalah model FE.
+Dalam model FE, dilakukan transformasi *within* pada setiap variabel.
+Proses dari transformasi *within* adalah mengurangi data asal seperti $\acute{Y}_{it}$ dan $\acute{K}_{it}$, dengan rata-rata waktu tiap provinsi $\bar{\acute{Y}}_{i.}$ dan $\bar{\acute{K}}_{i.}$.
+Sebagai contoh, variasi PDRB antar waktu dapat ditulis sebagai $\ddot{Y}_{it} = (\acute{Y}_{it} - \bar{\acute{Y}}_{i.})$ dengan $\bar{\acute{Y}}_{i.}$ menunjukkan rata-rata PDRB antarwaktu tiap provinsi.
+
+$$
+\bar{\acute{Y}}_{i.} =  \sum_{t=1}^{T}{{Y}_{it}}/T
+$$
+
+Data yang digunakan dalam estimasi model FE adalah *time-demeaned data*, yaitu variasi antarwaktu.
+Persamaan \ref{eq:fe} menunjukkan model FE.
 
 \begin{equation}
     \ddot{Y}_{it} = \beta_1 \ddot{K}_{it} + \beta_2 \ddot{H}_{it} + \beta_3 \ddot{L}_{it} + \beta_4 \ddot{I}_{it} + \ddot{\epsilon}_{it} \\
@@ -188,7 +195,7 @@ Model ketiga adalah model RE.
 Data yang digunakan dalam estimasi model RE adalah *quasi-demeaned data*.
 Transformasi untuk model RE sama dengan model FE, yaitu transformasi *within*.
 Namun hanya sebagian dari data asal yang dikurangi dengan rata-rata waktu tiap provinsi.
-Berikut adalah model RE.
+Persamaan \ref{eq:re} menunjukkan model RE.
 
 \begin{equation}
     \tilde{Y}_{it} = (1 - \theta) {\delta} + \beta_1 \tilde{K}_{it} + \beta_2 \tilde{H}_{it} + \beta_3 \tilde{L}_{it} + \beta_4 \tilde{I}_{it} + \tilde{\upsilon}_{it}
@@ -208,33 +215,43 @@ Model RE diestimasi dengan menggunakan *Feasbile Generalized Least Square* atau 
 
 Penelitian ini menggunakan data sekunder.
 Data dikumpulkan dari Situs Badan Pusat Statistik dan publikasi Statistik Telekomunikasi Indonesia.
-Tabel \@ref(sumber-data) mencantumkan satuan dan sumber data dari masing-masing variabel yang digunakan dalam penelitian.
-Ringkasan statistik untuk masing-masing variabel telah ditabulasi ke dalam Tabel \@ref(ringkasan-statistik).
-Ruang lingkup penelitian adalah 33 provinsi di Indonesia yang dikumpulkan dari tahun 2010 sampai tahun 2015.
-Semua provinsi ($i$) di Indonesia kecuali Provinsi Kalimantan Utara digunakan, dan 2010 - 2015 adalah dimensi waktu ($t$).
-Provinsi Kalimantan Utara tidak dimasukkan ke dalam analisis disebabkan oleh beberapa nilai yang tidak ada (*missing value*).
-Dengan demikian, data panel yang digunakan dalam penelitian ini adalah data panel yang seimbang dengan jumlah amatan sebanyak 198.
+Tabel \@ref(sumber-data) mencantumkan satuan dan sumber data dari masing-masing variabel yang digunakan.
 
 \begin{table}[h]
 \caption{\label{sumber-data}Sumber Data}
 \centering
-    \begin{tabular}[t]{p{6cm}cp{5cm}}
-        \toprule
-        Nama Variabel                                       & Satuan          & Sumber Data          \\
-        \midrule
-        Produk Domestik Regional Bruto (PDRB)              & Triliun Rupiah  & \cite{tabdimpdrb}    \\
-        Pembentukkan Modal Tetap Bruto  (PMTB)              & Triliun Rupiah  & \cite{tabdimpdrb}    \\
-        Angka Partisipasi Kasar Sekolah Menengah (APKSM)    & \%              & \cite{tabdimapk}    \\
-        Tingkat Kesempatan Kerja (TKK)                      & \%              & \cite{tabtkk}      \\
-        Tingkat Penetrasi Internet (TPI)                    & \%              & \cite{stattele11} dan \cite{stattele15} \\
-        \midrule
-        \multicolumn{3}{l}{$n = 33, t = 6, N = 198$} \\
-        \bottomrule
-    \end{tabular}
+\begin{tabular}[t]{p{6cm}cp{5cm}}
+    \toprule
+    Nama Variabel                                       & Satuan          & Sumber Data          \\
+    \midrule
+    Produk Domestik Regional Bruto (PDRB)              & Triliun Rupiah  & \cite{tabdimpdrb}    \\
+    Pembentukkan Modal Tetap Bruto  (PMTB)              & Triliun Rupiah  & \cite{tabdimpdrb}    \\
+    Angka Partisipasi Kasar Sekolah Menengah (APKSM)    & \%              & \cite{tabdimapk}    \\
+    Tingkat Kesempatan Kerja (TKK)                      & \%              & \cite{tabtkk}      \\
+    Tingkat Penetrasi Internet (TPI)                    & \%              & \cite{stattele11} dan \cite{stattele15} \\
+    \midrule
+    \multicolumn{3}{l}{$n = 33, t = 6, N = 198$} \\
+    \bottomrule
+\end{tabular}
 \end{table}
 
+Ruang lingkup penelitian adalah 33 provinsi di Indonesia yang dikumpulkan dari tahun 2010 sampai tahun 2015.
+33 Provinsi yang digunakan adalah semua provinsi ($i$) di Indonesia kecuali Provinsi Kalimantan Utara, dan tahun 2010 sampai 2015 adalah dimensi waktu ($t$).
+Provinsi Kalimantan Utara tidak dimasukkan ke dalam data disebabkan oleh beberapa nilai yang tidak ada (*missing value*).
+Dengan demikian, data panel yang digunakan dalam penelitian ini adalah data panel yang seimbang (*balanced*) dengan jumlah amatan sebanyak 198.
 
 # HASIL DAN PEMBAHASAN
+
+Ringkasan statistik untuk masing-masing variabel telah ditabulasi ke dalam Tabel \@ref(ringkasan-statistik).
+Ringkasan statistik yang digunakan adalah MIN, MAX, MEAN, SD, CV.
+MIN menunjukkan nilai terkecil dari suatu variabel.
+Sebaliknya, MAX menunjukkan terbesar atau tertinggi dari suatu variabel.
+MEAN memberikan nilai rata-rata, dan SD menunjukkan standar deviasi.
+Standar Deviasi memiliki arti deviasi atau simpangan terhadap nilai rata-rata variabel tersebut.
+Semakin tinggi nilai standar deviasi maka makin besar persebaran nilai amatan.
+CV adalah koefisien variasi (\textit{coefficient of variation}).
+Koefisien variasi merupakan rasio antara SD dengan MEAN.
+CV menunjukkan tingkat penyebaran suatu variabel relatif terhadap rata-rata variabel tersebut.
 
 \begin{table}[h]
 \caption{\label{ringkasan-statistik}Ringkasan Statistik}
@@ -252,18 +269,10 @@ Dengan demikian, data panel yang digunakan dalam penelitian ini adalah data pane
     \end{tabular}
 \end{table}
 
-Ringkasan statistik yang digunakan adalah MIN, MAX, MEAN, SD, CV.
-MIN menunjukkan nilai terkecil dari suatu variabel.
-Sebaliknya, MAX menunjukkan terbesar atau tertinggi dari suatu variabel.
-MEAN memberikan nilai rata-rata, dan SD menunjukkan standar deviasi.
-Standar Deviasi memberikan arti deviasi atau simpangan terhadap nilai rata-rata variabel tersebut.
-Semakin tinggi nilai standar deviasi maka makin besar persebaran nilai amatan.
-CV adalah koefisien variasi (\textit{coefficient of Variance}).
-Koefisien variasi merupakan rasio antara SD dengan MEAN.
-CV menunjukkan tingkat penyebaran suatu variabel relatif terhadap rata-rata variabel tersebut.
+SD dan CV sama-sama digunakan untuk melihat variasi atau sebaran.
+SD digunakan untuk melihat penyebaran dari suatu variabel, dan juga untuk membandingkan penyebaran 2 atau lebih variabel yang memiliki satuan yang sama.
 CV digunakan untuk membandingkan tingkat penyebaran pada variabel yang tidak memiliki satuan yang sama.
 Semakin tinggi nilai CV, maka tingkat penyebaran data juga semakin tinggi.
-
 Jika menggunakan nilai standar deviasi, PDRB lebih bervariasi daripada PMTB.
 Kedua variabel sama-sama menggunakan satuan triliun rupiah, sehingga perbandingan dapat dilakukan dengan melihat nilai SD.
 Hal yang sama dapat dikatakan untuk variabel APKSM, TKK dan TPI yang sama-sama memiliki satuan persen.
@@ -291,9 +300,9 @@ Selama tahun 2010 - 2015, paling sedikit sekitar 85 persen penduduk usia kerja m
 Nilai rata-rata tingkat kesempatan kerja adalah 94,49 persen, sedangkan standar deviasi sebesar 2,51 persen.
 Ini menunjukkan tingkat kesempatan kerja yang tidak jauh berbeda.
 
-Gambar \@ref(fig:akses-1) menunjukkan penyebaran pengguna internet pada tahun 2010 dan 2015.
-Sumbu datar adalah bin untuk persentase pengguna internet, sedangkan sumbu tegak menyatakan jumlah provinsi yang berada dalam bin tersebut.
-Setiap bin memiliki lebar sebesar 5 persen.
+Gambar \@ref(fig:akses-1) menunjukkan penyebaran TPI pada tahun 2010 dan 2015.
+Sumbu datar adalah keranjang untuk TPI, sedangkan sumbu tegak adalah jumlah provinsi yang berada dalam keranjang tersebut.
+Setiap keranjang memiliki rentang sebesar 5 persen.
 
 \begin{figure}
 \centering
@@ -311,15 +320,15 @@ Provinsi dengan persentase pengguna internet terendah adalah provinsi Papua (8,9
 Selain itu, provinsi dengan persentase pengguna tertinggi adalah Provinsi DKI Jakarta (46,6 persen) diikuti oleh Provinsi Kepulauan Riau (37,0 persen), DI Yogyakarta (35,0 persen), Provinsi Kalimantan Timur (31,6 persen), dan Provinsi Bali (28,8 persen).
 Dapat dikatakan bahwa dalam periode 2010 - 2015, semakin banyak masyarakat indonesia yang menggunakan internet.
 
-Untuk mengetahui pengaruh TPI terhadap pertumbuhan ekonomi, digunakan regresi linier data panel.
+Untuk mengetahui pengaruh TPI terhadap pertumbuhan ekonomi, digunakan regresi data panel.
 Berbagai pengujian hipotesis dilakukan untuk memilih model linier yang terbaik antara model POLS, FE, dan RE.
 Hasil dari pengujian hipotesis serta beberapa *plot* dapat dilihat pada Lampiran 2 sampai Lampiran 5.
-Setelah dilakukan berbagai pengujian hipoetsis, diputuskan model linier terbaik yaitu model FE.
-Persamaan \ref{eq:inferensia} adalah estimasi model FE pada Persamaan \ref{eq:fe}.
+Setelah dilakukan serangkaian pengujian hipotesis, diputuskan model linier terbaik yaitu model FE.
+Persamaan \ref{eq:inferensia} adalah estimasi model FE pada persamaan \ref{eq:fe}.
 Bentuk yang lebih lengkap dapat dilihat pada Lampiran 1.
 
 \begin{equation}
-        \ddot{Y}_{it} =
+        \hat{\ddot{Y}}_{it} =
           \underset{(0.077)}{0.384} \ddot{K}^{\star\star\star}_{it}
         + \underset{(0.043)}{0.103} \ddot{H}^{\star}_{it} \\
         + \underset{(0.468)}{1.254} \ddot{L}^{\star\star}_{it} \\
@@ -328,27 +337,28 @@ Bentuk yang lebih lengkap dapat dilihat pada Lampiran 1.
 \end{equation}
 
 Tanda $\star$, $\star\star$, $\star\star\star$ masing-masing menunjukkan bahwa koefisien signifikan pada tingkat signifikansi 5 persen, 1 persen, dan 0.1 persen.
-Pada tingkat signifikansi sebesar 5 persen, tingkat penetrasi internet memberikan pengaruh positif kepada pertumbuhan ekonomi.
+Pada tingkat signifikansi sebesar 5 persen, faktor tingkat penetrasi internet memberikan pengaruh positif kepada pertumbuhan ekonomi.
 Persamaan \ref{eq:inferensia} menunjukkan bahwa hubungan positif antara internet dan pertumbuhan ekonomi juga terjadi di Indonesia.
-Peningkatan tingkat penetrasi internet sebesar 10pp (poin persen atau *percentage points*) akan meningkatkan pertumbuhan ekonomi provinsi sebesar 1,49 persen.
-
+Peningkatan variasi TPI antarwaktu sebesar 10pp (poin persen atau *percentage points*) akan meningkatkan variasi PDRB antarwaktu sebesar 1,49 persen.
 Selain estimasi titik, terdapat juga estimasi selang.
 Batas bawah dan batas atas selang kepercayaan menguatkan temuan bahwa tingkat pengguna internet berpengaruh positif terhadap pertumbuhan ekonomi.
 Peningkatan tingkat penetrasi internet sebesar 10 persen akan meningkatkan pertumbuhan ekonomi provinsi sebesar antara 1,04 persen sampai 1,94 persen.
 
 Variabel lain yang ikut disertakan dalam model memiliki pengaruh yang positif bagi pertumbuhan ekonomi, menurut estimasi titik dan estimasi selang.
-Penambahan 10 persen pembentukan modal tetap bruto akan meningkatkan pertumbuhan ekonomi provinsi sebesar 3,84 persen.
-Peningkatan 10pp angka partisipasi kasar sekolah menengah akan meningkatkan pertumbuhan ekonomi provinsi sebesar 1,03 persen.
-Peningkatan 10pp tingkat kesempatan kerja akan meningkatkan pertumbuhan ekonomi sebesar 12,54 persen.
-Nilai R-Square sebesar 0,9210 menunjukkan bahwa model yang dibentuk mampu menjelaskan 92,10 persen keragaman pada variabel terikat.
+Pada estimasi titik, penambahan variasi PMTB antarwaktu sebesar 10 persen akan meningkatkan variasi PDRB antarwaktu sebesar 3,84 persen.
+Jika variasi APKSM antarwaktu meningkat sebesar 10pp, maka variasi PDRB antarwaktu akan meningkat sebesar 1,03 persen.
+Jika variasi TKK antarwaktu meningkat sebesar 10pp, maka variasi PDRB antarwaktu akan meningkat sebesar 12,54 persen.
+Pada estimasi selang, penambahan variasi PMTB antarwaktu sebesar 10 akan meningkatkan variasi PDRB antarwaktu antara 2,33 persen sampai 5,36 persen.
+Jika variasi APKSM antarwaktu meningkat sebesar 10pp, maka variasi PDRB antarwaktu akan meningkat antara 0,18 persen sampai 1,89 persen.
+Jika variasi TKK antarwaktu meningkat sebesar 10pp, maka variasi PDRB antarwaktu akan meningkat antara 3,29 persen sampai 21,79 persen.
+
+Nilai F menunjukkan bahwa secara bersama-sama, variasi antarwaktu untuk masing-masing variabel bebas PMTB, APKSM, TKK, dan TPI memiliki pengaruh signifikan positif terhadap variasi PDRB antarwaktu.
+Nilai $R^{2}$ sebesar 0,9210 menunjukkan bahwa model yang dibentuk mampu menjelaskan 92,10 persen variasi PDRB antarwaktu.
 
 # KESIMPULAN
 
 Berdasarkan hasil analisis deskriptif dan inferensia, terdapat dua kesimpulan yang dapat diambil.
 Pertama adalah tingkat penetrasi internet per provinsi di Indonesia mengalami peningkatan pada tahun 2010 sampai 2015.
-Hal in menunjukkan bahwa permintaan akan internet per provinsi di Indonesia semakin lama semakin meningkat.
-Perkembangan informasi dan
-Kedua adalah Pertumbuhan tingkat penetrasi internet berpengaruh positif bagi pertumbuhan PDRB provinsi di Indonesia.
-Dengan penelitian ini, dibukttikan bahwa faktor internet seperti TPI memiliki pegaruh positif terhadap pertumbuhan ekonomi seperti yang telah dilakukan \cite{feng16} dan \cite{chu}.
-Oleh karena itu, peneliti memberikan saran kepada pemerintah agar menambah jangkauan internet seperti menambah *Base Transceiver Station* dan meningkatkan kualitas dari akses internet seperti kecepatan internet dan konten yang ditampilkan di internet.
-Peneliti juga memberi saran kepada masyarakat agar menggunakan layanan internet dengan bijaksana dan bertanggung jawab.
+Hal tersebut menunjukkan bahwa pengguna internet per provinsi di Indonesia terus meningkat tiap tahun.
+Kedua adalah pertumbuhan tingkat penetrasi internet berpengaruh positif bagi pertumbuhan PDRB provinsi di Indonesia.
+Dengan ini turut dibuktikan bahwa faktor internet seperti TPI memiliki pengaruh positif terhadap pertumbuhan ekonomi seperti yang telah dilakukan \cite{feng16} dan \cite{chu}.
