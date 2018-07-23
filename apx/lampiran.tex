@@ -19,7 +19,7 @@
         \multicolumn{4}{l}{Total Sum of Square = 2.0667} \\
         \multicolumn{4}{l}{Residual Sum of Square = 0.1632} \\
         \multicolumn{4}{l}{$R^{2}= 0.9210$} \\
-        \multicolumn{4}{l}{$F(4, 161) = 469.454$ ***} \\
+        \multicolumn{4}{l}{$F(4, 32) = 264.434$ ***} \\
     \midrule
         \multicolumn{4}{l}{Catatan: *** p<0.001, ** p<0.01, * p<0.05, ln : logaritma natural}\\
     \bottomrule
@@ -38,7 +38,7 @@ Chow                & $F(160, 33) = 142.81$ & 0.000    & Intersep dan Slope adal
 Honda               & $z = 21.084$          & 0.000    & Tidak terdapat efek individu    \\
 Hausman             & $\chi^2(4) = 153.54$  & 0.000    & Tidak ada korelasi antar efek individu dengan variabel bebas\\
 Breusch-Godfrey AR(1) & $\chi^2(1) = 13.277$  & 0.000    & Tidak ada korelasi serial order ke-1    \\
-Breusch-GodfreyAR(6) & $\chi^2(6) = 50.041$  & 0.000    & Tidak ada korelasi serial order ke-6    \\
+Breusch-Godfrey AR(6) & $\chi^2(6) = 50.041$  & 0.000    & Tidak ada korelasi serial order ke-6    \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -59,12 +59,13 @@ Breusch-GodfreyAR(6) & $\chi^2(6) = 50.041$  & 0.000    & Tidak ada korelasi ser
 \textbf{Lampiran 6. R script untuk pemodelan}
 
 \begin{verbatim}
+
 library(plm)
 library(lmtest)
 library(broom)
 library(ggplot2)
 theme_set(theme_bw())
-net <- read.csv("net_clean.csv")
+net <- read.csv("data/net_clean.csv")
 
 # Jadikan p.dataframe
 nep <- pdata.frame(net, index = c("i", "t"), drop.index = F)
@@ -75,7 +76,7 @@ alpha <- 0.05
 # Spesifikasi Model
 f1 <- log(Y) ~ log(K) + log(H) + log(L) + log(I)
 
-# Estimasi model
+# Estimasi Model
 
 POLS <- plm(f1, nep, model = "pooling") # Pooled OLS
 FE <- plm(f1, nep, model = "within") # Fixed / Within
@@ -122,25 +123,59 @@ HAC <- vcovHC(FE, method = "arellano")
 library(lmtest)
 
 ## Statistik t
-coeftest(FE, vcov. = HAC, df = NULL) # Uji Wald
-coeftest(FE, vcov. = HAC, df = FE$df.residual) # Uji t
+coeftest(FE, vcov. = HAC)
 
 ## Selang Kepercayaan
 coefci(FE, vcov. = HAC)
 
 ## Statistik F
-z <- Within(log(nep$Y)) # Transformasi Within
-sst <- sum(z^2) # Sum Square Total
-df1 <- 4 # df1
-ssr <- sum(resid(FE)^2) # Sum Square Residual
-df2 <- df.residual(FE) # df residual
-
-F_stat <- ((sst-ssr)/df1)/((ssr)/df2) # Nilai statistik F
-pf(F_stat, df1, df2, lower.tail = F) # p-Value
+pwaldtest(FE, vcov = HAC, test = "F")
 
 ## R-Squared
-r.squared(FE) # R-Squared
+r.squared(FE)
+
+# Beberapa nilai lainnya
+
+## Heteros and Autocor Consistent Standard Error
+HAC
+
+## Fixed Effect
+fixef(FE)
+
 \end{verbatim}
 
+
+\newpage
+
+\textbf{Lampiran 7. Objek HAC}
+
+\begin{verbatim}
+             log(K)        log(H)       log(L)        log(I)
+log(K)  0.005893269 -0.0015603868 -0.025462490 -0.0010160082
+log(H) -0.001560387  0.0018623044  0.001696597 -0.0001725984
+log(L) -0.025462490  0.0016965968  0.219354985  0.0038393457
+log(I) -0.001016008 -0.0001725984  0.003839346  0.0005082936
+\end{verbatim}
+
+\textbf{Lampiran 8. Fixed Effect}
+
+\begin{verbatim}
+
+       11        12        13        14        15
+-3.141406 -2.393774 -3.124198 -2.332203 -3.111130
+       16        17        18        19        21
+-2.809062 -4.079415 -2.831660 -3.671423 -3.273807
+       31        32        33        34        35
+-1.927809 -1.680793 -2.003279 -3.515915 -1.708500
+       36        51        52        53        61
+-2.482041 -3.318336 -3.370264 -3.631475 -3.239257
+       62        63        64        71        72
+-3.633143 -3.145402 -2.326182 -3.635492 -3.591302
+       73        74        75        76        81
+-2.860557 -3.655738 -4.297287 -4.092584 -4.123220
+       82        91        94
+-4.169640 -3.489708 -2.961604
+
+\end{verbatim}
 
 Source Code untuk makalah ini dapat diakses pada \href{https://github.com/rexevan/148429}{https://github.com/rexevan/148429}.

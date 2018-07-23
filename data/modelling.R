@@ -3,7 +3,7 @@ library(lmtest)
 library(broom)
 library(ggplot2)
 theme_set(theme_bw())
-net <- read.csv("net_clean.csv")
+net <- read.csv("data/net_clean.csv")
 
 # Jadikan p.dataframe
 nep <- pdata.frame(net, index = c("i", "t"), drop.index = F)
@@ -61,21 +61,21 @@ HAC <- vcovHC(FE, method = "arellano")
 library(lmtest)
 
 ## Statistik t
-coeftest(FE, vcov. = HAC, df = NULL) # Uji Wald
-coeftest(FE, vcov. = HAC, df = FE$df.residual) # Uji t
+coeftest(FE, vcov. = HAC)
 
 ## Selang Kepercayaan
 coefci(FE, vcov. = HAC)
 
 ## Statistik F
-z <- Within(log(nep$Y)) # Transformasi Within
-sst <- sum(z^2) # Sum Square Total
-df1 <- 4 # df1
-ssr <- sum(resid(FE)^2) # Sum Square Residual
-df2 <- df.residual(FE) # df residual
-
-F_stat <- ((sst-ssr)/df1)/((ssr)/df2) # Nilai statistik F
-pf(F_stat, df1, df2, lower.tail = F) # p-Value
+pwaldtest(FE, vcov = HAC, test = "F")
 
 ## R-Squared
 r.squared(FE)
+
+# Beberapa nilai lainnya
+
+## Heteros and Autocor Consistent Standard Error
+HAC
+
+## Fixed Effect
+fixef(FE)
