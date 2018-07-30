@@ -339,10 +339,10 @@ Bentuk yang lebih lengkap dapat dilihat pada Lampiran 1.
 Tanda $\star$, $\star\star$, $\star\star\star$ masing-masing menunjukkan bahwa koefisien signifikan pada tingkat signifikansi 5 persen, 1 persen, dan 0.1 persen.
 Pada tingkat signifikansi sebesar 5 persen, faktor tingkat penetrasi internet memberikan pengaruh positif kepada pertumbuhan ekonomi.
 Persamaan \ref{eq:inferensia} menunjukkan bahwa hubungan positif antara internet dan pertumbuhan ekonomi juga terjadi di Indonesia.
-Peningkatan variasi TPI antarwaktu sebesar 10pp (poin persen atau *percentage points*) akan meningkatkan variasi PDRB antarwaktu sebesar 1,49 persen.
+Setelah mengontrol efek individu, peningkatan TPI sebesar 10pp (poin persen atau *percentage points*) akan meningkatkan PDRB sebesar 1,49 persen.
 Selain estimasi titik, terdapat juga estimasi selang.
-Batas bawah dan batas atas selang kepercayaan menguatkan temuan bahwa tingkat pengguna internet berpengaruh positif terhadap pertumbuhan ekonomi.
-Peningkatan tingkat penetrasi internet sebesar 10 persen akan meningkatkan pertumbuhan ekonomi provinsi sebesar antara 1,04 persen sampai 1,94 persen.
+Batas bawah dan batas atas selang kepercayaan menguatkan temuan bahwa faktor penetrasi internet berpengaruh positif terhadap pertumbuhan ekonomi.
+Peningkatan TPI sebesar 10pp akan meningkatkan pertumbuhan ekonomi provinsi sebesar antara 1,04 persen sampai 1,94 persen.
 
 Variabel lain yang ikut disertakan dalam model memiliki pengaruh yang positif bagi pertumbuhan ekonomi, menurut estimasi titik dan estimasi selang.
 Pada estimasi titik, penambahan variasi PMTB antarwaktu sebesar 10 persen akan meningkatkan variasi PDRB antarwaktu sebesar 3,84 persen.
